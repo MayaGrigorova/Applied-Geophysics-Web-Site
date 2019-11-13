@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One|PT+Sans:400,700|PT+Serif:400,700|Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Applied Geophysics</title>
+</head>
+<body>
+    <div class="site">
+
+        <header class="site-header">
+                <div class="wrapper">
+                    <a class="home-page" href="/index/">Department of<span class="cursive"> Applied Geophysics</span></a>
+                        <nav class="site-nav">
+                            <ul>
+                                {% for page in site.pages %}
+                                    {% if page.title %}
+                                        <li><a href="{{ page.url }}">{{page.title}}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                </div>      
+        </header>
+
+        <main class="site-main">
+        {% if page.title %}
+            <h2>{{page.title}}</h2>
+        {% endif %}
+            {{content}}
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-flex">
+                <div class="first">
+                    <p class="quick-link">Quick Links</p>
+                        {% for page in site.pages %}
+                            {% if page.title %}
+                                <li><a href="{{ page.url }}">{{page.title}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                </div>
+        
+                <div class="second">
+                    <p class="address">Address</p>
+                        <ul>
+                            <li>Studentski Grad, “prof. Boyan Kamenov” Street, Sofia 1700</li>
+                            <li>applied.geophysics@mgu.com</li>
+                            <li>(02) 888 834 653</li>
+                        </ul>
+                </div>
+            
+                <div class="third">
+                    <p class="icons">Follow Us</p>
+                        <ul class="last-ul">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                </div>
+            </div>
+                <p class="end">Copyright © 2019 AppliedGeophysics. All Rights Reserved. MGU</p>
+        </footer>
+
+    </div>
+    
+</body>
+</html>

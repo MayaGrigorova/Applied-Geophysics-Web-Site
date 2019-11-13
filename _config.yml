@@ -1,0 +1,25 @@
+title: Department of Applied Geophysics
+email: maya.grigorova86@gmail.com
+description: Web site of Department of Applied Geophysics
+destination: docs
+baseurl: ""
+url: ""
+twitter_username: maya.grigorova
+github_username:  MayaGrigorova
+facebook_username: mayagrigorova
+
+# Build settings
+plugins:
+  - jekyll-feed
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
