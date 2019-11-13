@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Merienda+One|PT+Sans:400,700|PT+Serif:400,700|Quicksand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.baseurl }}/https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
     <title>Applied Geophysics</title>
 </head>
@@ -14,12 +14,12 @@
 
         <header class="site-header">
                 <div class="wrapper">
-                    <a href="{{ site.baseurl }}/"></a><a class="home-page" href="/index/">Department of<span class="cursive"> Applied Geophysics</span></a>
+                    <a class="home-page" href="{{ site.baseurl }}/index">Department of<span class="cursive"> Applied Geophysics</span></a>
                         <nav class="site-nav">
                             <ul>
                                 {% for page in site.pages %}
                                     {% if page.title %}
-                                        <li><a href="{{ site.baseurl }}/"></a><a href="{{ page.url }}">{{page.title}}</a></li>
+                                        <li><a href="{{ site.baseurl }}/{{ page.url }}">{{page.title}}</a></li>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
@@ -40,7 +40,7 @@
                     <p class="quick-link">Quick Links</p>
                         {% for page in site.pages %}
                             {% if page.title %}
-                                <li><a href="{{ site.baseurl }}/"></a><a href="{{ page.url }}">{{page.title}}</a></li>
+                                <li><a href="{{ site.baseurl }}/{{ page.url }}">{{page.title}}</a></li>
                             {% endif %}
                         {% endfor %}
                 </div>

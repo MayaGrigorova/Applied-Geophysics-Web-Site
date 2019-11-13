@@ -13,6 +13,7 @@ plugins:
   - jekyll-feed
 
 exclude:
+  - docs
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
