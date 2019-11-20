@@ -1,0 +1,45 @@
+.undergraduate {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.picture.undergrad-img:after {
+    padding-top: 65%;  
+}
+
+.picture.undergrad-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 0%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.text p {
+    padding: 0.5em;
+    color:  rgb(10, 53, 70);
+    
+}
+
+.text:before {
+    
+    display: block;
+    content: '';
+    width: 65em;
+    height: 12em;
+    position: absolute;
+    top: 10.5%; left: 22.5%; right: 0; bottom: 0;
+    background: rgb(102, 101, 100);
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
+    opacity: 0.3;
+}
+
+.undergraduate a {
+    text-decoration: none;
+    font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+    color:  rgb(63, 44, 107);
+    text-align: center;
+}
