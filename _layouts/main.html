@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
+    <script>
+        window.addEventListener('load', (event) => {
+            document.querySelector('body').classList.add('loaded');
+        })
+    </script>
     <title>Applied Geophysics</title>
 </head>
 <body>
@@ -15,14 +20,17 @@
 
         <header class="site-header">
                 <div class="wrapper">
-                    <a class="home-page" href="{{ site.baseurl }}/index">Department of<span class="cursive"> Applied Geophysics</span></a>
+                    <a class="home-page" href="{{ site.baseurl }}/Home/">Department of<span class="cursive"> Applied Geophysics</span></a>
                         <nav class="site-nav">
                             <ul>
-                                {% for page in site.pages %}
+                                {% assign navigation_pages = site.pages | sort: "order" %}
+
+                                {% for page in navigation_pages %}
                                     {% if page.title %}
                                         <li><a href="{{ site.baseurl }}/{{ page.url }}">{{page.title}}</a></li>
                                     {% endif %}
                                 {% endfor %}
+
                             </ul>
                         </nav>
                 </div>      

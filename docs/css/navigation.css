@@ -8,13 +8,13 @@
     font-family: var(--font-family-headings, 'Shrikhand', cursive);
     font-style: italic;
     font-size: 30px;
-    color: rgb(48, 48, 128);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.72);
+    color: rgb(10, 53, 70);
+    text-shadow: 1px 1px 2px rgba(2, 2, 2, 0.72);
 }
 
 .home-page {
     font-family: var(--font-family-headings, 'Shrikhand', cursive);
-    color: black;
+    color: rgb(66, 65, 65);
     font-style: italic;
     font-size: 30px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.72);
@@ -38,7 +38,7 @@
     display: block;
     padding: 0.5em 1em;
     border-radius: 0.2em;
-    color: rgb(48, 48, 128);
+    color: rgb(10, 53, 70);
     text-decoration: none;
     outline: none;
 }
@@ -46,12 +46,12 @@
 .site-nav a:focus,
 .site-nav a:hover {
     color: #FFF;
-    background: rgb(181, 218, 243);
+    background: rgb(10, 53, 70);
 }
 
-.site-nav a:focus {
+/* .site-nav a:focus {
     text-decoration: underline;
-}
+} */
 
 .site-header .wrapper {
     max-width: initial;

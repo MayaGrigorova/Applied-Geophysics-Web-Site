@@ -2,6 +2,7 @@
     display: flex;
     padding-top: 1rem;
     padding-bottom: 2rem;
+    align-items: center;
 }
 
 .picture.undergrad-img:after {
@@ -18,14 +19,13 @@
     z-index: 5;
 }
 
-.text p {
+.text-undergrad p {
     padding: 0.5em;
     color:  rgb(10, 53, 70);
-    
+    margin-left: 1rem;
 }
 
-.text:before {
-    
+.text-undergrad:before {  
     display: block;
     content: '';
     width: 65em;
@@ -42,4 +42,98 @@
     font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
     color:  rgb(63, 44, 107);
     text-align: center;
+    transition: transform 0.5s ease-in-out;
 }
+
+.undergraduate a:hover {
+    transform: scale(1.1);
+}
+
+/* Section Graduate */
+
+.graduate {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    align-items: center;
+}
+
+.graduate-list li:nth-child(2),
+.graduate-list li:nth-child(3),
+.graduate-list li:nth-child(4) {
+    list-style: none outside;
+    transition: transform 0.5s ease-in-out;
+}
+
+.graduate-list li:first-child {
+    list-style: none outside;
+    text-align: center;
+    font: 16px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+    color: rgb(10, 53, 70);
+}
+
+.picture.graduate-img:after {
+    padding-top: 65%; 
+}
+
+.picture.graduate-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 0%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.picture.graduate-img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0.2em 0.5rem 0 rgba(0,0,0,0.3);
+}
+
+.picture.graduate-img:before {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.5) inset;
+    z-index: 10;
+    pointer-events: none; 
+}
+
+.text-grad p {
+    padding: 0.5em;
+    color:  rgb(10, 53, 70);
+    margin-left: 2rem;
+}
+
+.text-grad:before {
+    display: block;
+    content: '';
+    width: 65em;
+    height: 13em;
+    position: absolute;
+    top: 40%; left: 22.5%; right: 0; bottom: 0;
+    background: rgb(102, 101, 100);
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.graduate-list a {
+    text-decoration: none;
+    font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+    color:  rgb(63, 44, 107);
+    text-align: center;
+    
+}
+
+.graduate-list li:nth-child(2):hover,
+.graduate-list li:nth-child(3):hover,
+.graduate-list li:nth-child(4):hover {
+    transform: scale(1.1);
+}
+
+

@@ -26,6 +26,23 @@
     font-size: 24px;  
     padding: 16.5rem 0rem 8rem 49.5rem;
     z-index: 1;
+    /* opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
+}
+
+.box-in-box p {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.box-in-box p {
+    transform: translate(-15vw);
+}
+
+
+.loaded .box-in-box p {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 /* ---Main Text Begin--- */
