@@ -2,7 +2,8 @@ title: Department of Applied Geophysics
 email: maya.grigorova86@gmail.com
 description: Web site of Department of Applied Geophysics
 destination: docs
-baseurl: "/Applied-Geophysics-Web-Site"
+# baseurl: "/Applied-Geophysics-Web-Site"
+baseurl: ""
 url: ""
 twitter_username: maya.grigorova
 github_username:  MayaGrigorova
@@ -19,6 +20,7 @@ exclude:
   - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - node_modules
   - node_modules/
   - vendor/bundle/
   - vendor/cache/
