@@ -243,6 +243,17 @@
     padding: 0.3rem;
 }
 
+.third > a{
+    color: #fff;
+    font-size: 34px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.third a:hover {
+    opacity: 0.5;
+}
+
+
 .quick-link,
 .address,
 .icons {
