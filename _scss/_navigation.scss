@@ -23,9 +23,21 @@
 
 /* --Header End-- */
 
+.site-nav {
+
+    @include bp(mobile) {
+        display: none;
+    }
+}
+
 .site-nav ul {
     margin: 0;
-    display: flex;
+
+    @include bp(desktop) {
+        
+        display: flex;
+    }
+    
 }
 
 .site-nav li {
@@ -49,17 +61,49 @@
     background: rgb(10, 53, 70);
 }
 
-/* .site-nav a:focus {
-    text-decoration: underline;
-} */
-
 .site-header .wrapper {
-    max-width: initial;
-    display: flex;
-    align-items: center;
-    padding: 0 2em;
+
+    @include bp(desktop) {
+        display: flex;
+        padding: 0 2em;
+    }
+    
+    @include bp(mobile) {
+        text-align: center;
+        padding: 0 5em;   
+
+        label.nav-toggle-label {
+            display: block;
+        }
+
+    }
 }
 
-.site-header nav {
+.site-header .nav {
     margin-left: auto;
+}
+
+.nav-toggle {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+
+    &:checked + .site .site-header .site-nav {
+
+        @include bp(mobile) {
+            display: block;
+            text-align: center;
+        }
+
+        .nav-toggle-label .fas fa-bars {
+            margin-left: 3rem;
+        }
+    }
+
+    &-label {
+        @include bp(desktop) {
+            display: none;
+        }
+
+    }
 }

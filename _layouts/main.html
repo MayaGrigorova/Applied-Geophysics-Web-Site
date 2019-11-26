@@ -14,14 +14,22 @@
             document.querySelector('body').classList.add('loaded');
         })
     </script>
-    <title>Applied Geophysics</title>
+    <title>
+        {% if page.title != 'Home' %}
+            {{ page.title }} - {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
 </head>
 <body class="page-{{ page.title | slugify }} ">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <div class="site">
 
         <header class="site-header">
                 <div class="wrapper">
                     <a class="home-page" href="{{ site.baseurl }}/home">Department of<span class="cursive"> Applied Geophysics</span></a>
+                    <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
                         <nav class="site-nav nav location-{{ include.location }}">
                             <ul>
                                 {% assign navigation_pages = site.pages | sort: "order" %}

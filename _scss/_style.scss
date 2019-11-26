@@ -16,6 +16,10 @@
     left: 47.5rem;
     z-index: -1;
     box-shadow: 10px 11px 12px -8px rgba(0,0,0,0.75);
+
+    @include bp(mobile) {
+        display: none;
+    }
 }
 
 .box-in-box {
@@ -26,13 +30,17 @@
     font-size: 24px;  
     padding: 16.5rem 0rem 8rem 49.5rem;
     z-index: 1;
-    /* opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
+
 }
 
 .box-in-box p {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+   
+    @include bp(mobile) {
+        display: none;
+    }
+    
 }
 
 .box-in-box p {
@@ -55,6 +63,14 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.72);
     padding: 5rem 0rem 1rem 0rem;
     margin-left: 25rem;
+ 
+    @include bp(mobile) {
+        // display: inline-block;
+        // text-align: center;
+        // width: 50%;
+        
+    }
+   
 }
 
 .main-text .author {
@@ -65,6 +81,12 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.72);
     margin-left: 40rem;
     padding: 0rem 0rem 1rem 0rem;
+    
+    @include bp(mobile) {
+        // display: inline-block;
+        // text-align: center;
+        
+    }
 }
 
 .text-container:after {
@@ -76,6 +98,11 @@
     position: absolute;
     top: 35.5rem;
     z-index: -1;  
+    
+    @include bp(mobile) {
+        display: none;
+    }
+
 }
 
 .text-container p {
@@ -91,6 +118,11 @@
     text-align: center;
     background: rgb(69, 69, 69);
     color: #fff;
+
+    @include bp(mobile) {
+        display: block;
+    }
+
 }
 
 .form .form-title:after {
@@ -111,6 +143,12 @@
     justify-content: space-between;
     margin: 0 auto;
     width: 40%;
+    
+    @include bp(mobile) {
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
 
 .form .form-input .mail {
@@ -129,6 +167,10 @@
     border: 1px solid rgb(107, 191, 255);
     border-radius: 0.3rem;
     padding: 0.1rem 1rem;
+
+    @include bp(mobile) {
+        margin: 0.5rem;
+    }
 }
 
 /* ---Main Form End--- */
@@ -141,6 +183,19 @@
     background:rgb(47, 53, 57);
     color: #fff;
     padding: 0.5rem 0rem;
+
+    @include bp(mobile) {
+        display: block;
+    }
+}
+
+.first,
+.second,
+.third,
+.last-ul {
+    padding-bottom: 0.5rem;
+    text-align: center;
+    justify-content: center;
 }
 
 .end {
@@ -172,7 +227,6 @@
     font-weight: bold;
     display: inline-block;
     padding: 0.3rem;
-
 }
 
 .third li:nth-child(2) a i { 
