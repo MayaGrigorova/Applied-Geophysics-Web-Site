@@ -3,7 +3,15 @@
     margin: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2;
+    justify-items: stretch;
+
+    @include bp(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    // @include bp(mobile) {
+    //     grid-template-columns:  1fr 1fr;
+    // }
     
 
     li {
@@ -12,26 +20,24 @@
         position: relative;
         overflow: hidden;
 
-        &::before {
+        &:before {
             display: block;
             content: '';
             padding-top: 100%;
         }
-
+        
         &.portrait {
-            grid-row: span 2;
-
-            &:before {
+           grid-row: 2;
+           
+           &:before {
                 padding-top: 137%;
             }
         }
 
         &.landscape {
-            grid-row: span 2;
-
+    
             &:before {
-                padding-top: 100%;
-
+                padding-top: 80%;
             }
         }
     }
@@ -48,6 +54,15 @@
         position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
+        border-radius: 0.5rem;
+        border: 2px solid black;
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    img:hover {
+        opacity: 0.5;
     }
    
 }
