@@ -1,0 +1,43 @@
+.site-news {
+    background: url(../images/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.events {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include bp(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        display: block;
+        list-style: none outside;
+        font-size: 16px;
+        font-style: italic;
+        padding: 1rem;
+    }
+
+    li:before {
+        display: inline-block;
+        content: '\f19d';
+        font-family:'Font Awesome 5 Free';
+        font-weight: bold;
+        padding-right: 0.5rem;
+   
+    }
+
+    a {
+        color: #000;
+        transition: transform 0.5s ease-in;
+    }
+
+    a:hover {
+       transform: scale(1.5);
+    }
+
+    
+}

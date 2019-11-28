@@ -1,0 +1,21 @@
+.our-mission:before {
+    display: block;
+    content: '';
+    width: 81em;
+    height: 15em;
+    position: absolute;
+    top: 10%; left: 8%; right: 0; bottom: 0;
+    background: rgb(102, 101, 100);
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.our-mission p {
+    padding-right: 2rem;
+    font-style: italic;
+    padding: 0.5em;
+}
+// p:nth-child(4) {
+//     padding-bottom: 5rem;
+// }

@@ -4,6 +4,8 @@ description: Web site of Department of Applied Geophysics
 destination: docs
 baseurl: "/Applied-Geophysics-Web-Site"
 url: ""
+external_url_1: "https://www.bgd.bg/frames_home_EN.html"
+external_url_2: "https://events.eage.org/en/2019/2nd%20EAGE%20Conference%20on%20Reservoir%20Geoscience"
 twitter_username: maya.grigorova
 github_username:  MayaGrigorova
 facebook_username: mayagrigorova
