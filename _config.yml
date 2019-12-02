@@ -28,6 +28,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - package.json
-  - packege-lock.json
+  - package-lock.json
   - gulpfile.js
   - theme-personal
