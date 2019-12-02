@@ -1,6 +1,7 @@
 .site-news {
     background: url(../images/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg) no-repeat center center;
     background-size: cover;
+    z-index: -5;
 }
 
 .events {
@@ -18,7 +19,8 @@
         list-style: none outside;
         font-size: 16px;
         font-style: italic;
-        padding: 1rem;
+        padding: 1rem 0rem 1rem 4rem;
+        transition: transform 0.5s ease-in;
     }
 
     li:before {
@@ -30,14 +32,15 @@
    
     }
 
-    a {
-        color: #000;
-        transition: transform 0.5s ease-in;
-    }
+    li:hover {
+        transform: scale(1.1);
+        color:darkmagenta;
+     }
 
-    a:hover {
-       transform: scale(1.5);
+    a {
+        color: black;
     }
+    
 
     
 }

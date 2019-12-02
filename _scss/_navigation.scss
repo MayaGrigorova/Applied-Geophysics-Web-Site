@@ -2,6 +2,8 @@
 
 .site-header {
     padding: 0rem 0rem 1rem 0rem;
+    position: relative;
+    z-index: 2000;
 }
 
 .site-header .cursive {
@@ -23,44 +25,6 @@
 
 /* --Header End-- */
 
-.site-nav {
-
-    @include bp(mobile) {
-        display: none;
-    }
-}
-
-.site-nav ul {
-    margin: 0;
-
-    @include bp(desktop) {
-        
-        display: flex;
-    }
-    
-}
-
-.site-nav li {
-    display: block;
-    list-style: none outside;
-    // padding: 0 0.1em;
-}
-
-.site-nav a {
-    display: block;
-    padding: 0.5em 1em;
-    border-radius: 0.2em;
-    color: rgb(10, 53, 70);
-    text-decoration: none;
-    outline: none;
-}
-
-.site-nav a:focus,
-.site-nav a:hover {
-    color: #FFF;
-    background: rgb(10, 53, 70);
-}
-
 .site-header .wrapper {
 
     @include bp(desktop) {
@@ -77,6 +41,67 @@
         }
 
     }
+}
+
+.site-nav {
+    
+    @include bp(mobile) {
+        display: none;
+    }
+}
+
+ul {
+    margin: 0;
+    
+
+    li {
+        display: block;
+        list-style: none outside;
+        position: relative;
+
+        &:hover > ul {
+            display: block;
+        }
+    }
+
+    ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        
+
+        a {
+            border:2px solid rgb(10, 53, 70);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+.site-nav > ul {
+
+    @include bp(desktop) {
+        display: flex;
+    }
+}
+
+.site-nav a {
+    display: block;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    color: rgb(10, 53, 70);
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+.site-nav a:focus,
+.site-nav a:hover {
+    color: #FFF;
+    background: rgb(10, 53, 70);
 }
 
 .site-header .nav {

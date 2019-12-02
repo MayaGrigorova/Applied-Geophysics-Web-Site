@@ -41,6 +41,15 @@
 
                                         <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
                                             <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
+                                            
+                                            {% if current_page.title == 'Study' %}
+                                                <ul>
+                                                    <li><a href="#">Undergraduate</a></li>
+                                                    <li><a href="#">Graduate</a></li>
+                                                    <li><a href="#">PHD Students</a></li>
+                                                </ul>
+                                            {% endif %}
+
                                         </li>
                                     {% endif %}
                                 
@@ -71,7 +80,7 @@
                                 <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
                                     <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
                                 </li>
-                            
+
                             {% endif %}
                     
                         {% endfor %}
@@ -81,7 +90,7 @@
                 <div class="second">
                     <p class="address">Address</p>
                         <ul>
-                            <li>Studentski Grad, “prof. Boyan Kamenov” Street, Sofia 1700</li>
+                            <li>Studentski Grad, “Prof. Boyan Kamenov” Street, Sofia 1700</li>
                             <li>applied.geophysics@mgu.com</li>
                             <li>(02) 888 834 653</li>
                         </ul>
