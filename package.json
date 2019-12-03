@@ -10,7 +10,8 @@
     "child-process": "^1.0.2",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "yarn": "^1.21.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

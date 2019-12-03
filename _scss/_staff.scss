@@ -3,32 +3,61 @@
     margin: 0;
     display: grid;
     grid-template-columns: 250px 250px 250px 250px 250px;
+    align-content: space-between;
+    position: relative;
 
     @include bp(phone) {
         grid-template-columns: 1fr;
     }
 
+    @include bp(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    .fas {
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        color: black;
+        margin: 1.5rem;
+    }
+
     p {
         display: block;
         grid-column: 1/-1;
-        font: 14px/2 var(--font-family-headings, 'Verdana', sans-serif);
-        text-align: center;
-        padding-left: 2rem;
-        padding-top: 0.3rem;
+        font: 14px/3 var(--font-family-headings, 'Quicksands', sans-serif);
+        margin-left: 3rem;
+        
+        @include bp(mobile) {
+            font: 14px/1.5 var(--font-family-headings, 'Quicksands', sans-serif);
+            padding-left: 1em;
+            margin: 0;
+        }
+
     }
 
     p:before {
-            display: block;
-            content: '';
-            width: 92em;
-            height: 15em;
-            position: absolute;
-            top: 10%; left: 8%; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
-            opacity: 0.3;
-            z-index: -1;
+        display: block;
+        content: '';
+        background-image: url(../images/roman-mager-5mZ_M06Fc9g-unsplash.jpg);
+        background-size: cover;
+        z-index: -5;
+        width: var(--layout-width, 1300px);
+        height: 25em;
+        position: absolute;
+        top: 0%; left: 0%; right: 0; bottom: 0;
+        opacity: 0.1;
+        border-radius: 0.5rem;
+        box-shadow:  rgba(153, 151, 151, 0.6);
+        border: 2px solid black;
+        border-radius: 0.5rem;
+
+        @include bp(mobile) {
+            width: 100%;
+            display: inline-block;
         }
+    
+    }
 
     li {
         display: block;
@@ -47,9 +76,8 @@
             &:before {
                  padding-top: 100%;
             }
-        }
-        
-    }    
+        }   
+    }   
 
     a {
         position: absolute;
@@ -67,6 +95,7 @@
         background: rgba(0, 0, 0, 0.8);
         opacity: 1;
         transition: opacity 0.2s ease-in-out;
+        transition: scale 2s;
         cursor: pointer;
     }
 
@@ -84,5 +113,5 @@
     img:hover {
         opacity: 0.4;
     }
-    
+
 }
