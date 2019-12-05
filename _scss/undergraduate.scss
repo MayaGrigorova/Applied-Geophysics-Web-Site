@@ -1,12 +1,41 @@
+$breakpoints: (
+  'phone':      ( max-width:  600px ),
+  'tablet':     ( max-width:  900px ),
+  'mobile':     ( max-width:  1024px ),
+  'desktop':    ( min-width: 1025px ),
+  'large':      ( min-width:  1600px )
+) !default;
+
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @content;
+      }
+    }
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
 .undergraduate {
     display: flex;
     padding-top: 1rem;
     padding-bottom: 2rem;
     align-items: center;
+
+    @include bp(mobile) {
+        flex-direction: column;
+    }
+
 }
 
 .picture.undergrad-img:after {
-    padding-top: 65%;  
+    padding-top: 65%; 
+     
+    @include bp(mobile) {
+        display: none;
+    }
 }
 
 .picture.undergrad-img img {
@@ -17,12 +46,17 @@
     top: 50%; left: 0%;
     transform: translateY(-50%);
     z-index: 5;
+
+    @include bp(mobile) {
+        display: none;
+    }
 }
 
 .text-undergrad p {
     padding: 0.5em;
     color:  rgb(10, 53, 70);
     margin-left: 1rem;
+    text-align: justify;
 }
 
 .text-undergrad:before {  
@@ -35,6 +69,10 @@
     background: rgb(102, 101, 100);
     box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
     opacity: 0.3;
+
+    @include bp(mobile) {
+        display: none;
+    }
 }
 
 .undergraduate a {
@@ -53,8 +91,8 @@
 
 .grid-pictures ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
-    
+    grid-template-columns: repeat(3, 1fr);
+
     @include bp(mobile) {
         grid-template-columns: 1fr;
     }
@@ -68,15 +106,41 @@
         list-style: none outside;
         position: relative;
         overflow: hidden;
-        padding-bottom: 2rem;
         transition: all 0.8s ease-in-out;
 
-        &:before {
+        &:nth-child(1):before,
+        &:nth-child(2):before,
+        &:nth-child(3):before {
             display: block;
             content: '';
-            padding-top: 50%;
+            justify-self: center;
+            padding-top: 80%;
         }
 
+        .undergrad-info {
+            display: block;
+            color: black;
+            width: 300px;
+            font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+            padding-bottom: 1rem;
+            
+        }
+
+        .undergrad-links {
+            display: block;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    }
+
+    li:hover {
+        transform: scale(1.1);
     }
 
     img {
@@ -88,12 +152,24 @@
         transform: translate(-50%, -50%);
         border-radius: 0.5rem;
         opacity: 1;
+        transform: opacity 0.5s ease-in;
         cursor: pointer;
 
     }
 
-    li:hover {
-        transform: scale(1.1);
+    img:hover {
+        opacity: 0.4;
+    }
+
+    .undergrad-info {
+        display: block;
+        color: black;
+        text-align: justify;
+        margin: 0 auto;
+        width: 300px;
+        font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+        padding-bottom: 1rem;
+        
     }
 
 }

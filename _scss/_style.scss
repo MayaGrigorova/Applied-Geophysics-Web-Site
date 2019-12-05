@@ -5,6 +5,8 @@
     background-size: cover;
     position: relative;
     padding-top: 25rem;
+    transition: background-image 1s ease-in-out;
+   
 }
 
 .box-in-box::after {
@@ -115,31 +117,7 @@
     
 }
 
-.text-container a {
-    text-decoration: none;
-    font-family: var(--font-family-headings, Georgia, sans-serif);
-    color: #000;
-    position: absolute;
-    top: 40rem;
-    left: 9rem;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    border-radius: 0.3rem;
-    box-shadow: 10px 11px 12px -8px rgba(0,0,0,0.75);
-    padding: 0.5rem 1rem;
-
-    @include bp(mobile) {
-        display: none;
-    }
-
-}
-
-.text-container a:hover {
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-}
 .text-container p {
-    // margin: 1.6rem 0rem 0.5rem 0rem;
     font-family: var(--font-family-headings, Georgia, sans-serif);
     text-align: center;
     padding: 1rem;
@@ -148,7 +126,7 @@
 /* ---Main Form Begin--- */
 
 .form {
-    padding: 0.5rem 0rem;
+    padding: 1.5rem 0rem;
     text-align: center;
     background: rgb(69, 69, 69);
     color: #fff;
@@ -191,7 +169,7 @@
     border: none;
     flex-grow: 1;
     margin-right:0.5rem; 
-    padding: 0.1rem 0.4rem;
+    padding: 0.1rem 0.3rem;
 }
 
 .form a {
@@ -200,12 +178,19 @@
     background: rgb(107, 191, 255);
     border: 1px solid rgb(107, 191, 255);
     border-radius: 0.3rem;
-    padding: 0.1rem 1rem;
+    padding: 0.5rem 1rem;
 
     @include bp(mobile) {
         margin: 0.5rem;
     }
 }
+
+.form a:hover {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    color:  rgb(1, 12, 20);
+}
+
 
 /* ---Main Form End--- */
 

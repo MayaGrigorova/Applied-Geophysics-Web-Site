@@ -1,38 +1,64 @@
+// $breakpoints: (
+//   'phone':      ( max-width:  600px ),
+//   'tablet':     ( max-width:  900px ),
+//   'mobile':     ( max-width:  1024px ),
+//   'desktop':    ( min-width: 1025px ),
+//   'large':      ( min-width:  1600px )
+// ) !default;
+
+// @mixin bp($breakpoint) {
+//     @if map-has-key($breakpoints, $breakpoint) {
+//       @media #{inspect(map-get($breakpoints, $breakpoint))} {
+//         @content;
+//       }
+//     }
+//     @else {
+//       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+//           + "Available breakpoints are: #{map-keys($breakpoints)}.";
+//     }
+// }
+
 ul.methods-list {
     padding: 0 0 2em 0;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+
+    @include bp(mobile) {
+        flex-direction: column;
+        margin: 2rem;
+    }
+   
 }
 
 ul.methods-list li {
-    flex: 0 0 48%;
+    flex: 0 0 30%;
     display: block;
     list-style: none outside;
     text-align: center;
     margin-bottom: 3.5em;
-}
 
-@media (min-width: 900px) {
-    ul.methods-list li {
-        flex: 0 0 30%;
-    }
 }
 
 .method {
-    border: 2px solid rgb(10, 53, 70);
-    border-radius: 0.3em;
-    background: rgb(209, 224, 241);
+    background: rgb(235, 237, 240);
     font: var(--methods-p-font, 14px/1.2 'Quicksand', sans-serif);
     padding: 0rem 0.5rem 1rem 0.5rem;
+    box-shadow: 0px 0px 20px -2px rgba(126,126,130,0.81);
+    border: 5px groove rgb(95, 103, 109);
+    border-radius: 25px 0px 25px 0px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.method:hover {
+    transform: scale(1.1);
 }
 
 .method h3 {
     font: 18px/1.5 var(--font-family-headings, 'Verdana', sans-serif);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.72);
-    color:  rgb(34, 53, 61);
+    color:  rgb(50, 52, 53);
     letter-spacing: 0.1em;
 }
 
@@ -68,7 +94,7 @@ input:checked + .method .button .less {
 
 .more,
 .less {
-    border: 2px solid rgb(10, 53, 70);
+    border: 2px solid rgb(66, 68, 70);
     border-radius: 0.3em;
     padding: 0.3em 0.5em;
     font-weight: bold;
@@ -77,11 +103,8 @@ input:checked + .method .button .less {
 
 .more:hover,
 .less:hover {
-    border: 2px solid rgb(10, 53, 70); 
-    color: rgb(209, 224, 241);
-    background:rgb(10, 53, 70); 
+    border: 2px solid rgb(66, 68, 70); 
+    color: rgb(242, 244, 247);
+    background:rgb(66, 68, 70); 
     border-radius: 0.3em;
 }
-
-
-    

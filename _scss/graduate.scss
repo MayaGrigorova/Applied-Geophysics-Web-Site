@@ -1,9 +1,34 @@
+$breakpoints: (
+  'phone':      ( max-width:  600px ),
+  'tablet':     ( max-width:  900px ),
+  'mobile':     ( max-width:  1024px ),
+  'desktop':    ( min-width: 1025px ),
+  'large':      ( min-width:  1600px )
+) !default;
+
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @content;
+      }
+    }
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
 .graduate {
     display: flex;
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     align-items: center;
+
+    @include bp('mobile') {
+      flex-direction: column;
+    }
 }
+
 
 .graduate-list li:nth-child(2),
 .graduate-list li:nth-child(3),
@@ -21,6 +46,7 @@
 
 .picture.graduate-img:after {
     padding-top: 65%; 
+
 }
 
 .picture.graduate-img img {
@@ -31,6 +57,11 @@
     top: 50%; left: 0%;
     transform: translateY(-50%);
     z-index: 5;
+
+    @include bp(mobile) {
+        display: none;
+    }
+
 }
 
 .picture.graduate-img {
@@ -40,6 +71,11 @@
     overflow: hidden;
     position: relative;
     box-shadow: 0 0.2em 0.5rem 0 rgba(0,0,0,0.3);
+
+        
+    @include bp(mobile) {
+        display: none;
+    }
 }
 
 .picture.graduate-img:before {
@@ -54,19 +90,26 @@
     padding: 0.5em;
     color:  rgb(10, 53, 70);
     margin-left: 2rem;
+    position: relative;
+
 }
 
-.text-grad:before {
+.text-grad-submenu:before {
     display: block;
     content: '';
     width: 65em;
     height: 13em;
     position: absolute;
-    top: 10.5%; left: 22.5%; right: 0; bottom: 0;
+    top: 12%; left: 22%; right: 0; bottom: 0;
     background: rgb(102, 101, 100);
     box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
     opacity: 0.3;
     z-index: -1;
+
+    @include bp(mobile) {
+        display: none;
+    }
+
 }
 
 .graduate-list a {
@@ -81,4 +124,87 @@
 .graduate-list li:nth-child(3):hover,
 .graduate-list li:nth-child(4):hover {
     transform: scale(1.1);
+}
+
+// section grid//
+
+.grid-graduate ul {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include bp(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    @include bp(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        display: block;
+        list-style: none outside;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.8s ease-in-out;
+
+
+        &:nth-child(1):before,
+        &:nth-child(2):before,
+        &:nth-child(3):before {
+            display: block;
+            content: '';
+            padding-top: 100%;
+        }
+
+        .graduate-links {
+            display: block;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    }  
+
+    li:hover {
+        transform: scale(1.1);
+                
+        @include bp(mobile) {
+            transform: scale(0.9);
+        }
+    }
+
+    img {
+        display: block;
+        width: 250px;
+        height: auto;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        transform: opacity 0.5s ease-in;
+        cursor: pointer;
+        
+    }
+
+    img:hover {
+        opacity: 0.4;
+    }
+
+    .graduate-info {
+        display: block;
+        color: black;
+        text-align: justify;
+        margin: 0 auto;
+        width: 300px;
+        font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+
 }

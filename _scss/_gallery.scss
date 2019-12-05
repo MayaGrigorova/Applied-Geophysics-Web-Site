@@ -4,21 +4,25 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: stretch;
+    
+    @include bp(mobile) {
+        grid-template-columns:  1fr 1fr;
+    }
 
     @include bp(phone) {
         grid-template-columns: 1fr;
     }
-
-    // @include bp(mobile) {
-    //     grid-template-columns:  1fr 1fr;
-    // }
-    
 
     li {
         display: block;
         list-style: none outside;
         position: relative;
         overflow: hidden;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         &:before {
             display: block;
@@ -57,7 +61,6 @@
         border-radius: 0.5rem;
         border: 2px solid black;
         opacity: 1;
-        transition: opacity 0.2s ease-in-out;
         cursor: pointer;
     }
 
@@ -65,4 +68,9 @@
         opacity: 0.5;
     }
    
+}
+.gallery-text{
+    font-family: var(--font-family-headings, Georgia, sans-serif);
+    text-align: center;
+    padding: 1rem;
 }

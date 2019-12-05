@@ -26,7 +26,7 @@
         display: block;
         grid-column: 1/-1;
         font: 14px/3 var(--font-family-headings, 'Quicksands', sans-serif);
-        margin-left: 3rem;
+        margin-left: 4rem;
         
         @include bp(mobile) {
             font: 14px/1.5 var(--font-family-headings, 'Quicksands', sans-serif);
@@ -51,12 +51,12 @@
         box-shadow:  rgba(153, 151, 151, 0.6);
         border: 2px solid black;
         border-radius: 0.5rem;
+        padding-bottom: 5rem;
 
         @include bp(mobile) {
             width: 100%;
             display: inline-block;
         }
-    
     }
 
     li {
@@ -64,20 +64,18 @@
         list-style: none outside;
         position: relative;
         overflow: hidden;
+        transition: transform 0.9s ease-in-out;
 
         &:before {
             display: block;
             content: '';
-            padding-top: 80%;
+            padding-top: 100%;
         }
 
-        &.portrait {
-            
-            &:before {
-                 padding-top: 100%;
-            }
-        }   
-    }   
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 
     a {
         position: absolute;
@@ -95,7 +93,6 @@
         background: rgba(0, 0, 0, 0.8);
         opacity: 1;
         transition: opacity 0.2s ease-in-out;
-        transition: scale 2s;
         cursor: pointer;
     }
 

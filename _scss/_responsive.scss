@@ -26,4 +26,4 @@ $breakpoints: (
       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
           + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
-  }
+}
