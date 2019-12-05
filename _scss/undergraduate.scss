@@ -1,0 +1,99 @@
+.undergraduate {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    align-items: center;
+}
+
+.picture.undergrad-img:after {
+    padding-top: 65%;  
+}
+
+.picture.undergrad-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 0%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.text-undergrad p {
+    padding: 0.5em;
+    color:  rgb(10, 53, 70);
+    margin-left: 1rem;
+}
+
+.text-undergrad:before {  
+    display: block;
+    content: '';
+    width: 65em;
+    height: 12em;
+    position: absolute;
+    top: 10.5%; left: 22.5%; right: 0; bottom: 0;
+    background: rgb(102, 101, 100);
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.6) inset;
+    opacity: 0.3;
+}
+
+.undergraduate a {
+    text-decoration: none;
+    font: 12px/1.2 var(--font-family-headings, 'Verdana', sans-serif);
+    color:  rgb(63, 44, 107);
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.undergraduate a:hover {
+    transform: scale(1.1);
+}
+
+// section grid//
+
+.grid-pictures ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    
+    @include bp(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    @include bp(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        display: block;
+        list-style: none outside;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 2rem;
+        transition: all 0.8s ease-in-out;
+
+        &:before {
+            display: block;
+            content: '';
+            padding-top: 50%;
+        }
+
+    }
+
+    img {
+        display: block;
+        width: 300px;
+        height: auto;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 0.5rem;
+        opacity: 1;
+        cursor: pointer;
+
+    }
+
+    li:hover {
+        transform: scale(1.1);
+    }
+
+}
