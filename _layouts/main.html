@@ -37,22 +37,24 @@
 
                                 {% for current_page in navigation_pages %}
                                     
-                                    {% if current_page.title %}
+                                    {% if current_page.title != 'Graduate' %}
 
-                                        <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
-                                            <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
-                                            
-                                            {% if current_page.title == 'Study' %}
-                                                <ul>
-                                                    <li><a href="#">Undergraduate</a></li>
-                                                    <li><a href="#">Graduate</a></li>
-                                                    <li><a href="#">PHD Students</a></li>
-                                                </ul>
-                                            {% endif %}
+                                        {% if current_page.title != 'Undergraduate' %}
 
-                                        </li>
+                                            <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
+                                                <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
+                                                
+                                                {% if current_page.title == 'Study' %}
+                                                    <ul>
+                                                        <li><a href="{{ site.baseurl }}/study/undergraduate/">Undergraduate</a></li>
+                                                        <li><a href="{{ site.baseurl }}/study/graduate/">Graduate</a></li>
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        {% endif %}
+
                                     {% endif %}
-                                
+
                                 {% endfor %}
 
                             </ul>
@@ -75,14 +77,16 @@
 
                         {% for current_page in navigation_pages %}
                         
-                            {% if current_page.title %}
+                            {% if current_page.title != 'Graduate' %}
+
+                                {% if current_page.title != 'Undergraduate' %}
 
                                 <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
                                     <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
                                 </li>
 
+                                {% endif %}
                             {% endif %}
-                    
                         {% endfor %}
                     
                 </div>
