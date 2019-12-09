@@ -27,7 +27,7 @@
         &:before {
             display: block;
             content: '';
-            padding-top: 100%;
+            // padding-top: 100%;
         }
         
         &.portrait {
@@ -53,13 +53,13 @@
 
     img {
         display: block;
-        width: 300px;
+        width: 250px;
         height: auto;
         position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 0.5rem;
-        border: 2px solid black;
+        // border: 2px solid black;
         opacity: 1;
         cursor: pointer;
     }
