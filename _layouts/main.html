@@ -36,25 +36,20 @@
                                 {% assign navigation_pages = site.pages | sort: "order" %}
 
                                 {% for current_page in navigation_pages %}
-                                    
-                                    {% if current_page.title != 'Graduate' %}
-
-                                        {% if current_page.title != 'Undergraduate' %}
-
+                                    {% if current_page.title != 'Undergraduate' %}
+                                        {% if current_page.title != 'Graduate' %}
                                             <li class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}">
                                                 <a href="{{ site.baseurl }}{{ current_page.url }}">{{ current_page.title }}</a>
                                                 
                                                 {% if current_page.title == 'Study' %}
                                                     <ul>
-                                                        <li><a href="{{ site.baseurl }}/study/undergraduate/">Undergraduate</a></li>
+                                                        <li><a href="{{ site.baseurl }}/study/undergraduate/">Undergarduate</a></li>
                                                         <li><a href="{{ site.baseurl }}/study/graduate/">Graduate</a></li>
                                                     </ul>
                                                 {% endif %}
                                             </li>
-                                        {% endif %}
-
-                                    {% endif %}
-
+                                        {% endif %}   
+                                    {% endif %}   
                                 {% endfor %}
 
                             </ul>
